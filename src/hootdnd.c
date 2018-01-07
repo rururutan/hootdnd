@@ -71,7 +71,9 @@ int WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdShow)
 	GlobalFree(hGlobal);
 
 	// check extension
-	const wchar_t* extTable[] = { L".nsf", L".nez", L".gbs", L".gbr", L".hes", L".ay", NULL };
+	const wchar_t* extTable[] = {
+		L".nsf", L".nez", L".gbs", L".gbr", L".hes", L".kss", L".ay", NULL
+	};
 	bool sendPlay = false;
 	PTSTR ext = PathFindExtension(file_name);
 	for (int i=0; extTable[i] != NULL; i++) {
