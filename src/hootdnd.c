@@ -10,6 +10,7 @@
 #include <shlwapi.h>
 #include <shlobj.h>
 #include <tchar.h>
+#include <stdbool.h>
 
 int WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -64,10 +65,26 @@ int WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdShow)
 	dropfile->fNC = FALSE;
 	dropfile->fWide = TRUE;
 	dropfile->pt = pt;
-	lstrcpy((TCHAR*)(dropfile + 1), file_name);
+	lstrcpy((wchar_t*)(dropfile + 1), file_name);
 	GlobalUnlock(hGlobal);
 	PostMessage(Wnd, WM_DROPFILES, (WPARAM)hGlobal, 0);
 	GlobalFree(hGlobal);
+
+	// check extension
+	const wchar_t* extTable[] = { L".nsf", L".nez", L".gbs", L".gbr", L".hes", L".ay", NULL };
+	bool sendPlay = false;
+	PTSTR ext = PathFindExtension(file_name);
+	for (int i=0; extTable[i] != NULL; i++) {
+		if (_wcsicmp(extTable[i], ext) == 0) {
+			sendPlay = true;
+			break;
+		}
+	}
+
+	// send "return" key
+	if (sendPlay == true) {
+		PostMessage(Wnd, WM_KEYDOWN, VK_RETURN, 0);
+	}
 
 	return 0;
 }

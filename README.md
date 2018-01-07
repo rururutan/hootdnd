@@ -5,7 +5,7 @@
 
 Play music files in [hoot](http://dmpsoft.s17.xrea.com/hoot/)
 
- # hootdnd filename
+ hootdnd filename
 
 ## Support format
 
@@ -16,6 +16,10 @@ Play music files in [hoot](http://dmpsoft.s17.xrea.com/hoot/)
 * MPK
 * PT3
 * SPC
+* NSF/NEZ
+* AY
+* GBS/GBR
+* HES
 
 ## License
 
