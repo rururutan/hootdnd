@@ -22,6 +22,8 @@
 * GBS/GBR (DMG Sound Format)
 * HES (Hudson Entertainment System)
 
+Supports files defined with the bind tag in hoot.xml.
+
 ## License
 
 MIT
