@@ -70,6 +70,8 @@ int WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdShow)
 		}
 	}
 
+	LocalFree(argv);
+
 	// find window
 	HWND Wnd = FindWindowEx(NULL, NULL, NULL, L"hoot... - Sound Hardware Emulator");
 	if (Wnd == NULL) {
