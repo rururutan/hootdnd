@@ -1,8 +1,41 @@
 //#include "resource.h"
 
+#define VER_FILEVERSION             1,1,0,0
+#define VER_FILEVERSION_STR         "1.1.0.0\0"
+
+#define VER_PRODUCTVERSION          1,1,0,0
+#define VER_PRODUCTVERSION_STR      "1.1\0"
+
 IDI_ICON ICON DISCARDABLE "hootdnd.ico"
 
 //#define CREATEPROCESS_MANIFEST_RESOURCE_ID 1
 //#define RT_MANIFEST 24
 //CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "hootdnd.manifest"
 
+1 VERSIONINFO 
+FILEVERSION     VER_FILEVERSION
+PRODUCTVERSION  VER_PRODUCTVERSION
+FILEFLAGSMASK 0x3FL
+FILEFLAGS     0x0L
+FILEOS        0x4L
+FILETYPE      0x1L
+FILESUBTYPE   0x0L
+BEGIN
+ BLOCK "StringFileInfo"
+ BEGIN
+  BLOCK "04090000"
+  BEGIN
+   VALUE "FileDescription",  "hootdnd"
+   VALUE "FileVersion",      VER_FILEVERSION
+   VALUE "InternalName",     "hootdnd"
+   VALUE "LegalCopyright",   "Copyright (C)Ru^3"
+   VALUE "OriginalFilename", "hootdnd.exe"
+   VALUE "ProductName",      "hootdnd"
+   VALUE "ProductVersion",   VER_PRODUCTVERSION_STR
+  END
+ END
+ BLOCK "VarFileInfo"
+ BEGIN
+   VALUE "Translation", 0x409,0x000
+ END
+END
