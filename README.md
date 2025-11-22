@@ -9,20 +9,25 @@
 
 ## Support format
 
-* MDX (MXDRV)
-* MND (MNDRV)
-* MGS (MGSDRV)
-* BGM (KINRO5)
-* MPK (MPK)
+* MDX (X68000 MXDRV)
+* MND (X68000 MNDRV)
+* MGS (MSX MGSDRV)
+* BGM (MSX KINRO5)
+* MPK (MSX MPK)
 * PT3 (Vortex Tracker)
 * SPC (SNES Sound Format)
 * NSF/NEZ (NES Sound Format)
 * KSS (Konami Sound System)
 * AY  (AY)
-* GBS/GBR (DMG Sound Format)
-* HES (Hudson Entertainment System)
+* GBS/GBR (GameBoy DMG Sound Format)
+* HES (PC-Engine Hudson Entertainment System)
 
 Supports files defined with the bind tag in hoot.xml.
+
+## Build
+
+> cmake -S . -B build
+> cmake --build build --config Release
 
 ## License
 
