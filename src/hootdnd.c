@@ -16,7 +16,7 @@
 #define DIALOG_TITLE L"HootDrop"
 
 static void ShowLastError(DWORD _code){
-	LPVOID lpMsgBuf;
+	LPVOID lpMsgBuf = NULL;
 	FormatMessage(
 		FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
 		NULL, _code, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
@@ -99,7 +99,7 @@ int WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmdLine, int nCmdShow)
 
 	// check extension
 	const wchar_t* extTable[] = {
-		L".nsf", L".nez", L".gbs", L".gbr", L".hes", L".kss", L".ay", NULL
+		L".nsf", L".nez", L".nsfe", L".gbs", L".gbr", L".hes", L".kss", L".ay", NULL
 	};
 	bool sendPlay = false;
 	PTSTR ext = PathFindExtension(fileName);
