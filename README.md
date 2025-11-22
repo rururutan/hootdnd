@@ -3,9 +3,11 @@
 
 `hootdnd` is a tool that supports playing chiptune music files on [hoot](http://dmpsoft.s17.xrea.com/hoot/)
 
+`hootdnd` plays the specified file using the currently running hoot application.
+
 ## Usage
 
-> hootdnd filename
+> hootdnd [filename]
 
 ## Support format
 
@@ -27,6 +29,7 @@ Supports files defined with the bind tag in hoot.xml.
 ## Build
 
 > cmake -S . -B build
+>
 > cmake --build build --config Release
 
 ## License
